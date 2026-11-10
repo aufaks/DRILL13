@@ -4,11 +4,15 @@ import game_world
 
 
 class Ball:
-    image = None
+    images = {}
 
-    def __init__(self, x, y, velocity):
-        if Ball.image is None:
-            Ball.image = load_image('ball21x21.png')
+    def __init__(self, x, y, velocity, item=1):
+        image_names = {1: 'ball21x21.png', 2: 'ball41x41.png'}
+        if item not in image_names:
+            raise ValueError(f'Unsupported ball item: {item}')
+        if item not in Ball.images:
+            Ball.images[item] = load_image(image_names[item])
+        self.image = Ball.images[item]
         self.x, self.y = x, y
         self.velocity = velocity
 
