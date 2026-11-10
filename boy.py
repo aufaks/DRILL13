@@ -63,6 +63,9 @@ class Boy:
                 self.stop_run()
 
     def handle_event(self, event):
+        if not self.controls_enabled:
+            return
+
         if (event.type == SDL_KEYDOWN and
                 event.key == SDLK_SPACE and
                 self.state == 'SLEEP'):
