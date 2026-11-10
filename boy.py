@@ -19,6 +19,7 @@ class Boy:
         self.face_dir = 1
         self.pressed_keys = set()
         self.item = 1
+        self.controls_enabled = True
 
         self.machine = Machine(
             model=self,
