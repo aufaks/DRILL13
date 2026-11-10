@@ -43,7 +43,7 @@ def handle_events():
 
 
 def update():
-    pass
+    game_world.update()
 
 
 def render():
